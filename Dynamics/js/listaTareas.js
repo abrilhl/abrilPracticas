@@ -11,26 +11,18 @@ function agregarTarea() {
     const texto = document.createElement('p');
     texto.className = 'texto-tarea';
     texto.textContent = 'Nueva tarea';
-    
-    const botonEliminar = document.createElement('button');
-    botonEliminar.className = 'boton-eliminar';
-    botonEliminar.textContent = '×';
-    botonEliminar.onclick = function(){
-        tarea.remove();
-    };
-    
-    tarea.appendChild(botonEliminar);
+
     tarea.appendChild(texto);
     contenedorTareas.appendChild(tarea);
 }
 function agregarTareaConImagen1() {
-    agregarTareaConImagen('../Statics/media/img/imagen1.jpg');
+    agregarTareaConImagen1('../Statics/media/img/imagen1.jpg');
 }
 function agregarTareaConImagen2(){
-    agregarTareaConImagen('../Statics/media/img/imagen2.jpg');
+    agregarTareaConImagen2('../Statics/media/img/imagen2.jpg');
 }
 function agregarTareaConImagen3() {
-    agregarTareaConImagen('../Statics/media/img/imagen3.jpg');
+    agregarTareaConImagen3('../Statics/media/img/imagen3.jpg');
 }
 
 function eliminarUltimaTarea() {
