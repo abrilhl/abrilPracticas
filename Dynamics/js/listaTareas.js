@@ -1,52 +1,61 @@
-const taskContainer = document.getElementById('taskContainer');
-const addBtn = document.getElementById('addBtn');
-const addSpecialBtn = document.getElementById('addSpecialBtn');
-const addImageBtn = document.getElementById('addImageBtn');
-const deleteBtn = document.getElementById('deleteBtn');
-let taskCounter = 1;
-function addTask(text = null) {
-    const task = document.createElement('div');
-    task.className = 'task';
-    const taskText = document.createElement('p');
-    taskText.textContent = text || `Tarea ${taskCounter++}`;
-    const removeBtn = document.createElement('button');
-    removeBtn.className = 'remove-btn';
-    removeBtn.textContent = '×';
-    removeBtn.onclick = function() {
-        task.remove();
+const contenedorTareas = document.getElementById('contenedorTareas');
+const botonAgregar = document.getElementById('botonAgregar');
+const botonImagen1 = document.getElementById('botonImagen1');
+const botonImagen2 = document.getElementById('botonImagen2');
+const botonImagen3 = document.getElementById('botonImagen3');
+const botonEliminar = document.getElementById('botonEliminar');
+
+function agregarTarea() {
+    const tarea = document.createElement('div');
+    tarea.className = 'tarea';
+    const texto = document.createElement('p');
+    texto.className = 'texto-tarea';
+    texto.textContent = 'Nueva tarea';
+    
+    const botonEliminar = document.createElement('button');
+    botonEliminar.className = 'boton-eliminar';
+    botonEliminar.textContent = '×';
+    botonEliminar.onclick = function(){
+        tarea.remove();
     };
-    task.appendChild(removeBtn);
-    task.appendChild(taskText);
-    taskContainer.appendChild(task);
+    
+    tarea.appendChild(botonEliminar);
+    tarea.appendChild(texto);
+    contenedorTareas.appendChild(tarea);
 }
-function addTaskWithImage() {
-    const task = document.createElement('div');
-    task.className = 'task';
-    const taskText = document.createElement('p');
-    taskText.textContent = `Tarea con imagen ${taskCounter++}`;
-    const image = document.createElement('img');
-    image.className = 'task-image';
-    image.src = 'https://via.placeholder.com/150';
-    image.alt = 'Imagen de tarea';
-    const removeBtn = document.createElement('button');
-    removeBtn.className = 'remove-btn';
-    removeBtn.textContent = '×';
-    removeBtn.onclick = function() {
-        task.remove();
+function agregarTareaConImagen(numeroImagen) {
+    const tarea = document.createElement('div');
+    tarea.className = 'tarea';
+    
+
+    const texto = document.createElement('p');
+    texto.className = 'texto-tarea';
+    texto.textContent = 'Tarea con imagen';
+    
+    const imagen = document.createElement('img');
+    imagen.className = 'imagen-tarea';
+    imagen.src = "../Statics/media/img/imagen1.jpg";
+    const botonEliminar = document.createElement('button');
+    botonEliminar.className = 'boton-eliminar';
+    botonEliminar.textContent = '×';
+    botonEliminar.onclick = function(){
+        tarea.remove();
     };
-    task.appendChild(removeBtn);
-    task.appendChild(taskText);
-    task.appendChild(image);
-    taskContainer.appendChild(task);
+    tarea.appendChild(botonEliminar);
+    tarea.appendChild(texto);
+    tarea.appendChild(imagen);
+
+    contenedorTareas.appendChild(tarea);
 }
-function deleteLastTask() {
-    const tasks = document.querySelectorAll('.task');
-    if (tasks.length > 0) {
-        tasks[tasks.length - 1].remove();
-        if (taskCounter > 1) taskCounter--;
-    }
+
+function eliminarUltimaTarea() {
+    const tareas = document.querySelectorAll('.tarea');
+    if (tareas.length > 0){
+        tareas[tareas.length - 1].remove();
 }
-addBtn.addEventListener('click', () => addTask());
-addSpecialBtn.addEventListener('click', () => addTask('Tarea Especial')); 
-addImageBtn.addEventListener('click', addTaskWithImage); 
-deleteBtn.addEventListener('click', deleteLastTask);
+}
+botonAgregar.addEventListener('click', agregarTarea);
+botonImagen1.addEventListener('click', () => agregarTareaConImagen(1));
+botonImagen2.addEventListener('click', () => agregarTareaConImagen(2));
+botonImagen3.addEventListener('click', () => agregarTareaConImagen(3));
+botonEliminar.addEventListener('click', eliminarUltimaTarea);

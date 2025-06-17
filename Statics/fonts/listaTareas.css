@@ -1,0 +1,86 @@
+body{
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #82F0F5;
+}
+h1 {
+    text-align: center;
+    color: #1B14F5;
+    margin-bottom: 30px;
+}
+.controles{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+button{
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    flex-grow: 1;
+    }
+
+button:hover {
+    background-color: #1414F5;
+}
+#botonEliminar {
+    background-color: #7082F5;
+}
+
+#botonEliminar:hover {
+    background-color: #8814F5;
+}
+#contenedorTareas {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tarea{
+    background-color: white;
+    border: 1px solid #5675b6;
+    border-radius: 8px;
+    padding: 15px;
+    width: 160px;
+    text-align: center;
+    position: relative;
+}
+
+
+.texto-tarea {
+    margin: 10px 0;
+    color: #000000;
+}
+
+
+.imagen-tarea {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid #eee;
+}
+.boton-eliminar {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #a586e0;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+    cursor: pointer;
+    line-height: 22px;
+    }
+
+.boton-eliminar:hover {
+    background-color: #6b28d8;
+}
