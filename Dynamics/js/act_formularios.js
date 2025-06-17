@@ -17,6 +17,12 @@ mainForm.addEventListener("submit", function(e){
     } else{
         console.log("La edad es numérica");
     }
-
+    let carreras_de_interes = ["ciencias_computacion", "ingenieria"];
     let input_carrera =document.querySelector("input[name='carrera']:checked");
+    console.log("La carrera seleccionada es: " + input_carrera.value);
+    if (carreras_de_interes.indexOf(input_carrera.value) != -1){
+        console.log("Tu carrera es válida")
+    } else{
+        console.log("La carrera" + input_carrera.value + "no es una opción válida");
+    }
 });
