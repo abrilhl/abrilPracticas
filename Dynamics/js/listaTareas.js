@@ -23,29 +23,14 @@ function agregarTarea() {
     tarea.appendChild(texto);
     contenedorTareas.appendChild(tarea);
 }
-function agregarTareaConImagen(numeroImagen) {
-    const tarea = document.createElement('div');
-    tarea.className = 'tarea';
-    
-
-    const texto = document.createElement('p');
-    texto.className = 'texto-tarea';
-    texto.textContent = 'Tarea con imagen';
-    
-    const imagen = document.createElement('img');
-    imagen.className = 'imagen-tarea';
-    imagen.src = "../Statics/media/img/imagen1.jpg";
-    const botonEliminar = document.createElement('button');
-    botonEliminar.className = 'boton-eliminar';
-    botonEliminar.textContent = '×';
-    botonEliminar.onclick = function(){
-        tarea.remove();
-    };
-    tarea.appendChild(botonEliminar);
-    tarea.appendChild(texto);
-    tarea.appendChild(imagen);
-
-    contenedorTareas.appendChild(tarea);
+function agregarTareaConImagen1() {
+    agregarTareaConImagen('../Statics/media/img/imagen1.jpg');
+}
+function agregarTareaConImagen2(){
+    agregarTareaConImagen('../Statics/media/img/imagen2.jpg');
+}
+function agregarTareaConImagen3() {
+    agregarTareaConImagen('../Statics/media/img/imagen3.jpg');
 }
 
 function eliminarUltimaTarea() {
