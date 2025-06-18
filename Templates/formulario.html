@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Statics/styles/formulario.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Formulario Completo</h1>
+        <form id="mainForm" >
+            <label for="nombre">Nombre completo:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <label for="edad">Edad</label>
+            <input type="number" id="edad" name="edad" placeholder="Ingresa tu edad" required>
+            <label for="codigoPostal">Inserte su código postal:</label>
+            <input type="number"id="codigoPostal" name="codigoPostal"cplaceholder="Ingresa tu codigo postal: xxxxx" required>
+            <div class="field-group">
+                <label>Género:</label>
+                <div class="radio-group">
+                    <label for="masculino"><input type="radio" id="masculino" name="genero" value="masculino"> Masculino</label>
+                    <label for="femenino"><input type="radio" id="femenino" name="genero" value="femenino"> Femenino</label>
+                    <label for="otro"><input type="radio" id="otro" name="genero" value="otro"> Otro</label>
+                </div>
+            </div>
+
+            <div class="field-group">
+                <label>Intereses (selecciona todos los que apliquen):</label>
+                <div class="checkbox-group">
+                    <label for="interes1"><input type="checkbox" id="interes1" name="intereses" value="Tecnología"> Tecnología</label>
+                    <label for="interes2"><input type="checkbox" id="interes2" name="intereses" value="Deportes"> Deportes</label>
+                    <label for="interes3"><input type="checkbox" id="interes3" name="intereses" value="Musica"> Música</label>
+                    <label for="interes4"><input type="checkbox" id="interes4" name="intereses" value="Arte"> Arte</label>
+                </div>
+            </div>
+            <label for="pais">País:</label>
+            <select id="pais" name="pais" placeholder="Selecciona tu país" required>
+                <option value="Mexico">México</option>
+                <option value="Spain">España</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Peru">Perú</option>
+                <option value="Chile">Chile</option>
+                <option value="Venezuela">Venezuela</option>
+                <option value="Otros">Otros</option>
+            </select>
+            <label for="comentarios">Comentarios adicionales:</label>
+            <input type="text" id="comentarios" name="comentarios" placeholder="Escribe tus comentarios aquí...">
+            <label for="imagen">Subir una imagen:</label>
+            <input type="file" id="imagen" name="imagen" accept="image/*">
+            <button type="submit" class="submit-btn">Enviar formulario</button>
+        </form>
+    </div>
+    <script src="../Dynamics/js/formulario.js"></script>
+</body>
+</html>
